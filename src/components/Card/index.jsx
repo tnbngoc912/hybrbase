@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./style.scss";
 
 export const Card = ({ video = "", title = "", content = "" }) => {
@@ -17,6 +17,10 @@ export const Card = ({ video = "", title = "", content = "" }) => {
   const onEndedLoop = () => {
     if (focus) onLoop();
   };
+
+  useEffect(() => {
+    ref.current.currentTime = 0;
+  }, []);
 
   useLayoutEffect(() => {
     if (focus) {
@@ -41,7 +45,6 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           src={video}
           onEnded={onEndedLoop}
           onLoadedMetadata={() => {
-            // console.log("tetstt");
             setIsLoading(false);
           }}
         ></video>
