@@ -1,5 +1,19 @@
 @import "../../styles";
 
+@mixin fadein{
+	animation:fadein 1s ease forwards;
+	visibility:hidden;
+}
+
+@keyframes flyin{
+	0%{left:0;}
+	100%{left:50%;}
+}
+@keyframes fadein{
+	0%{opacity:0;}
+	100%{opacity:1;visibility:initial;}
+}
+
 .choose-us {
   position: absolute;
   left: 50%;
@@ -56,5 +70,41 @@
   }
   .slick-dots li.slick-active button:before {
     color: $primaryColor !important;
+  }
+
+  //ANIMATION
+  &__content {
+    &__title{
+      .section-label, 
+      .section-title {
+        animation:flyin 1s ease forwards;
+        animation-delay:.5s;
+      }
+      .section-label {
+          @include fadein;
+          animation-delay:.6s;
+      }
+      .section-title {
+          @include fadein;
+          animation-delay:.8s;
+      }
+    }
+
+    &__button {
+      animation:flyin 1s ease forwards;
+      animation-delay:.8s;
+      @include fadein;
+      animation-delay:1s;
+    }
+  }
+
+  &__slider {
+    animation:flyin 1s ease forwards;
+    animation-delay:.8s;
+    @include fadein;
+    animation-delay:1.5s;
+  }
 }
-}
+
+
+

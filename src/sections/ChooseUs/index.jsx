@@ -43,7 +43,7 @@ export const ChooseUs = () => {
         </div>
       </div>
 
-      <Slider ref={slider} {...SETTING_SLIDER}>
+      <Slider className="choose-us__slider" ref={slider} {...SETTING_SLIDER}>
         {DUMMY_DATA.map(({ title, content }, idx) => {
           return (
             <Card video={videos} title={title} content={content} key={idx} />
