@@ -17,7 +17,6 @@ export const Card = ({ video = "", title = "", content = "" }) => {
   const onEndedLoop = () => {
     if (focus) onLoop();
   };
-
   useEffect(() => {
     ref.current.currentTime = 0;
   }, []);
@@ -37,22 +36,20 @@ export const Card = ({ video = "", title = "", content = "" }) => {
       onMouseOut={() => setFocus(false)}
     >
       <div className="card__video">
+        {isLoading && <p>Loading</p>}
         <video
+          preload={"auto"}
           playsInline
           autoPlay
           ref={ref}
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          onLoadedMetadata={() => {
-            setIsLoading(false);
-          }}
+          // onLoadedMetadata={() => {
+          //   setIsLoading(false);
+          // }}
+          onCanPlay={() => setIsLoading(false)}
         ></video>
-        {isLoading ? (
-          <div class="overlay">
-            <p>loading</p>
-          </div>
-        ) : null}
       </div>
       <div className="card__copy">
         <h1 className="card__copy-title">{title}</h1>
