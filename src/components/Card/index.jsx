@@ -29,6 +29,8 @@ export const Card = ({ video = "", title = "", content = "" }) => {
     <div className="card">
       <div className="card__video">
         <video
+          playsinline
+          autoPlay
           ref={ref}
           onMouseOver={() => setFocus(true)}
           onMouseOut={() => setFocus(false)}
