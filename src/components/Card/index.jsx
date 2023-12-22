@@ -4,6 +4,7 @@ import "./style.scss";
 export const Card = ({ video = "", title = "", content = "" }) => {
   const ref = useRef(null);
   const [focus, setFocus] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const onLoop = () => {
     ref.current.play();
@@ -29,7 +30,7 @@ export const Card = ({ video = "", title = "", content = "" }) => {
     <div className="card">
       <div className="card__video">
         <video
-          playsinline
+          playsInline
           autoPlay
           ref={ref}
           onMouseOver={() => setFocus(true)}
@@ -37,7 +38,10 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-        ></video>
+          onCanPlay={() => setIsLoading(false)}
+        >
+          {isLoading ? "loading..." : ""}
+        </video>
       </div>
       <div className="card__copy">
         <h1 className="card__copy-title">{title}</h1>
