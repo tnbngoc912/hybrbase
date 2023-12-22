@@ -44,7 +44,7 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          onLoadedData={() => setIsLoading(true)}
+          onLoadedData={() => setIsLoading(false)}
           // onCanPlay={() => setIsLoading(false)}
         ></video>
       </div>
