@@ -42,7 +42,8 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          onCanPlay={() => setIsLoading(false)}
+          onLoadedData={() => setIsLoading(false)}
+          // onCanPlay={() => setIsLoading(false)}
         ></video>
       </div>
       <div className="card__copy">
