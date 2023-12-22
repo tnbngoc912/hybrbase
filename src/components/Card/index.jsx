@@ -40,7 +40,10 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          onCanPlay={() => setIsLoading(false)}
+          onLoadedMetadata={() => {
+            // console.log("tetstt");
+            setIsLoading(false);
+          }}
         ></video>
         {isLoading ? (
           <div class="overlay">
