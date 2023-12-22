@@ -1,0 +1,60 @@
+@import "../../styles";
+
+.choose-us {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  &__content {
+    @media only screen and (min-width: $sm) {
+     display: block;
+    }
+    @media only screen and (min-width: $xl) {
+      display: flex;
+    }
+
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      text-align: left;
+    }
+
+    &__button {
+      @media only screen and (max-width: $xl) {
+        &.top {
+          display: none;
+        }
+        &.bottom {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 40px;
+          gap: 4px;
+        }
+      }
+
+      @media only screen and (min-width: $xl) {
+        &.top {
+          display: flex;
+          gap: 4px;
+        }
+        &.bottom {
+          display: none;
+        }   
+      }
+    }
+  }
+
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+  .slick-dots li.slick-active button:before {
+    color: $primaryColor !important;
+}
+}

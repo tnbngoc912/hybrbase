@@ -1,0 +1,26 @@
+@import "../../styles";
+
+.section-title {
+  color: $blackColor;
+  text-transform: capitalize;
+  font-weight: 700;
+  text-align: center;
+  @media only screen and (max-width: $xs) {
+    font-size: 30px;
+   
+  }
+  @media only screen and (min-width: $sm) {
+    font-size:36px;
+    
+  }
+  @media only screen and (min-width: $md) {
+    font-size:30px;
+  }
+  @media only screen and (min-width: $lg) {
+    font-size:36px;
+  }
+  @media only screen and (min-width: $xl) {
+    font-size:40px;
+    text-align: left;
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../styles";
+
+.section-label {
+  color: $greyColor;
+  text-transform: uppercase;
+  letter-spacing:8px;
+  font-weight: 600;
+  text-align: center;
+
+  @media only screen and (max-width: $xs) {
+    font-size: 14px;
+    letter-spacing:4px;
+  }
+  @media only screen and (min-width: $sm) {
+    font-size: 16px;
+    letter-spacing:4px;
+  }
+  @media only screen and (min-width: $md) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: $lg) {
+   
+    font-size: 22px;
+    letter-spacing:8px;
+ 
+  }
+  @media only screen and (min-width: $xl) {
+      font-size: 20px;
+      text-align: left;
+  }
+}
+
