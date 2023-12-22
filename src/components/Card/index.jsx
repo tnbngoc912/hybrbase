@@ -34,11 +34,11 @@ export const Card = ({ video = "", title = "", content = "" }) => {
       onMouseOut={() => setFocus(false)}
     >
       <div className="card__video">
-        {isLoading && (
+        {isLoading ? (
           <div className="card__video--loading">
             <LoadingSpinner />
           </div>
-        )}
+        ) : null}
         <video
           preload={"auto"}
           playsInline
