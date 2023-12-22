@@ -17,9 +17,6 @@ export const Card = ({ video = "", title = "", content = "" }) => {
   const onEndedLoop = () => {
     if (focus) onLoop();
   };
-  useEffect(() => {
-    ref.current.currentTime = 0;
-  }, []);
 
   useLayoutEffect(() => {
     if (focus) {
@@ -45,9 +42,6 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          // onLoadedMetadata={() => {
-          //   setIsLoading(false);
-          // }}
           onCanPlay={() => setIsLoading(false)}
         ></video>
       </div>
