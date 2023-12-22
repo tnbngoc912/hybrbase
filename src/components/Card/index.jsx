@@ -27,21 +27,26 @@ export const Card = ({ video = "", title = "", content = "" }) => {
   }, [focus]);
 
   return (
-    <div className="card">
+    <div
+      className="card"
+      onMouseOver={() => setFocus(true)}
+      onMouseOut={() => setFocus(false)}
+    >
       <div className="card__video">
         <video
           playsInline
           autoPlay
           ref={ref}
-          onMouseOver={() => setFocus(true)}
-          onMouseOut={() => setFocus(false)}
           muted={true}
           src={video}
           onEnded={onEndedLoop}
           onCanPlay={() => setIsLoading(false)}
-        >
-          {isLoading ? "loading..." : ""}
-        </video>
+        ></video>
+        {isLoading ? (
+          <div class="overlay">
+            <p>loading</p>
+          </div>
+        ) : null}
       </div>
       <div className="card__copy">
         <h1 className="card__copy-title">{title}</h1>
