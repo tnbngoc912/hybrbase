@@ -21,10 +21,10 @@
     cursor: pointer;
   }
   &__video {
+    position: relative;
     border-radius: 10px 10px 0 0;
     overflow: hidden;
     max-height: 200px;
-   
   }
 
   &__copy {

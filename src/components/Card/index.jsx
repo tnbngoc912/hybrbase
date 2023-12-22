@@ -18,7 +18,7 @@ export const Card = ({ video = "", title = "", content = "" }) => {
     if (focus) onLoop();
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (focus) {
       onLoop();
     } else {
@@ -33,7 +33,9 @@ export const Card = ({ video = "", title = "", content = "" }) => {
       onMouseOut={() => setFocus(false)}
     >
       <div className="card__video">
-        {isLoading && <p>Loading</p>}
+        {isLoading && (
+          <p style={{ position: "absolute", top: "20px" }}>Loading</p>
+        )}
         <video
           preload={"auto"}
           playsInline
@@ -42,7 +44,7 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           muted={true}
           src={video}
           onEnded={onEndedLoop}
-          onLoadedData={() => setIsLoading(false)}
+          onLoadedData={() => setIsLoading(true)}
           // onCanPlay={() => setIsLoading(false)}
         ></video>
       </div>
