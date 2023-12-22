@@ -23,7 +23,7 @@ export const ChooseUs = () => {
         {/* FOR LARGE SCREEN */}
         <div className="choose-us__content__button top">
           <Button
-            onClick={() => () => slider?.current?.slickPrev()}
+            onClick={() => slider?.current?.slickPrev()}
             type="button"
             buttonStyle="btn--primary--outline"
             buttonSize="btn--large"
@@ -53,7 +53,7 @@ export const ChooseUs = () => {
       {/* FOR SMALL SCREEN */}
       <div className="choose-us__content__button bottom">
         <Button
-          onClick={() => () => slider?.current?.slickPrev()}
+          onClick={() => slider?.current?.slickPrev()}
           type="button"
           buttonStyle="btn--primary--outline"
           buttonSize="btn--large"
