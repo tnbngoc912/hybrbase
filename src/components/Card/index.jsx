@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.scss";
 import { LoadingSpinner } from "../LoadingSpinner";
 
@@ -35,7 +35,7 @@ export const Card = ({ video = "", title = "", content = "" }) => {
     >
       <div className="card__video">
         {isLoading && (
-          <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+          <div className="card__video--loading">
             <LoadingSpinner />
           </div>
         )}
@@ -48,7 +48,6 @@ export const Card = ({ video = "", title = "", content = "" }) => {
           src={video}
           onEnded={onEndedLoop}
           onLoadedData={() => setIsLoading(false)}
-          // onCanPlay={() => setIsLoading(false)}
         ></video>
       </div>
       <div className="card__copy">
