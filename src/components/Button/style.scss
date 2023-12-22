@@ -37,22 +37,8 @@
   &--round {
     padding:0;
     border-radius: 100px;
-    @media only screen and (max-width: $xs) {
-      height:30px;
-      width: 30px;
-    }
-    @media only screen and (min-width: $sm) {
-      height:30px;
-      width: 30px;
-     }
-     @media only screen and (min-width: $md) {
-      height:30px;
-      width: 30px;
-     }
-     @media only screen and (min-width: $lg) {
-      height:40px;
-      width: 40px;
-     }
+    height:40px;
+    width: 40px;
      @media only screen and (min-width: $xl) {
       height:60px;
       width: 60px;
