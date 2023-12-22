@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./style.scss";
+import { LoadingSpinner } from "../LoadingSpinner";
 
 export const Card = ({ video = "", title = "", content = "" }) => {
   const ref = useRef(null);
@@ -34,7 +35,9 @@ export const Card = ({ video = "", title = "", content = "" }) => {
     >
       <div className="card__video">
         {isLoading && (
-          <p style={{ position: "absolute", top: "20px" }}>Loading</p>
+          <div style={{ position: "absolute", top: "50%", left: "50%" }}>
+            <LoadingSpinner />
+          </div>
         )}
         <video
           preload={"auto"}
