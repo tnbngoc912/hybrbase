@@ -20,6 +20,7 @@
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  max-height: 100%;
 
   &__content {
     @media only screen and (min-width: $sm) {
@@ -33,7 +34,20 @@
     align-items: center;
 
     &__title {
-      text-align: left;
+      width: 100%;
+      .btn-read-more {
+        display: flex;
+        padding: 10px 20px;
+        margin: 20px auto;
+        @media only screen and (min-width: $sm) {
+          padding: 10px 20px;
+          margin: 20px auto;
+         }
+         @media only screen and (min-width: $xl) {
+          padding: 20px 40px;
+          margin: 50px auto;
+         }
+      }
     }
 
     &__button {
@@ -63,13 +77,10 @@
   }
 
   .slick-slide > div {
-    margin: 0 10px;
+    margin: 0 20px;
   }
   .slick-list {
     margin: 0 -10px;
-  }
-  .slick-dots li.slick-active button:before {
-    color: $primaryColor !important;
   }
 
   //ANIMATION
@@ -99,6 +110,14 @@
   }
 
   &__slider {
+    overflow-x: hidden;
+    @media only screen and (max-width: $xs) {
+     margin: 0;
+    }
+  
+    @media only screen and (min-width: $sm) {
+      margin:10px calc(50% - 50vw) 10px 0;
+    }
     animation:flyin 1s ease forwards;
     animation-delay:.8s;
     @include fadein;

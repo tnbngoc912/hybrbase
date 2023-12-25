@@ -13,20 +13,21 @@
 
   &--primary {
     &--solid {
-      background-color: $primaryColor;
-      color: $whiteColor;
+      background-color: $greyColor;
+      color: $blackColor;
       border: none;
     }
     &--outline {
       background-color: transparent;
-      color: $primaryColor;
-      border: 2px solid $primaryColor;
+      color: $blackColor;
+      border: 1px solid $greyColor;
     }
   }
 
   &--medium {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 700;
   }
 
   &--large {
@@ -37,12 +38,6 @@
   &--round {
     padding:0;
     border-radius: 100px;
-    height:40px;
-    width: 40px;
-     @media only screen and (min-width: $xl) {
-      height:60px;
-      width: 60px;
-     }
   }
 
   &--square {

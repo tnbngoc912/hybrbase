@@ -1,32 +1,30 @@
 export const SETTING_SLIDER = {
-  dots: true,
-  infinite: true,
+  dots: false,
+  lazyLoad: true,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 2.5,
+  infinite: false,
+  centerPadding: "60px",
   slidesToScroll: 1,
+  initialSlide: 1,
+  swipeToSlide: true,
   responsive: [
     {
       breakpoint: 1400,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
+        slidesToShow: 2.5
       }
     },
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2
+        slidesToShow: 1.5
       }
     },
     {
-      breakpoint: 650,
+      breakpoint: 550,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToShow: 1
       }
     }
   ]

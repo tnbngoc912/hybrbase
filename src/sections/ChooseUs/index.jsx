@@ -1,5 +1,4 @@
 import { Card } from "../../components/Card";
-import { SectionLabel } from "../../components/SectionLabel";
 import { SectionTitle } from "../../components/SectionTitle";
 import "./style.scss";
 import videos from "../../assets/Light_Make_Loop.mp4";
@@ -17,28 +16,20 @@ export const ChooseUs = () => {
     <section className="container choose-us">
       <div className="choose-us__content">
         <div className="choose-us__content__title">
-          <SectionLabel content="Choose Us" />
-          <SectionTitle content="Why people love to work with us?" />
-        </div>
-        {/* FOR LARGE SCREEN */}
-        <div className="choose-us__content__button top">
+          <SectionTitle>
+            <p>
+              Why people love to
+              <br />
+              work with us?
+            </p>
+          </SectionTitle>
           <Button
-            onClick={() => slider?.current?.slickPrev()}
-            type="button"
             buttonStyle="btn--primary--outline"
-            buttonSize="btn--large"
+            buttonSize="btn--medium"
             buttonShape="btn--round"
+            className="btn-read-more choose-us__content__button"
           >
-            ←
-          </Button>
-          <Button
-            onClick={() => slider?.current?.slickNext()}
-            type="button"
-            buttonStyle="btn--primary--solid"
-            buttonSize="btn--large"
-            buttonShape="btn--round"
-          >
-            →
+            Read more
           </Button>
         </div>
       </div>
@@ -50,27 +41,6 @@ export const ChooseUs = () => {
           );
         })}
       </Slider>
-      {/* FOR SMALL SCREEN */}
-      <div className="choose-us__content__button bottom">
-        <Button
-          onClick={() => slider?.current?.slickPrev()}
-          type="button"
-          buttonStyle="btn--primary--outline"
-          buttonSize="btn--large"
-          buttonShape="btn--round"
-        >
-          ←
-        </Button>
-        <Button
-          onClick={() => slider?.current?.slickNext()}
-          type="button"
-          buttonStyle="btn--primary--solid"
-          buttonSize="btn--large"
-          buttonShape="btn--round"
-        >
-          →
-        </Button>
-      </div>
     </section>
   );
 };
